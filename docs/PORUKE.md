@@ -1,5 +1,22 @@
 # Poruke
 
+## 2026-11-04 14:25, od cloud → lokalni (LAPTOP-0QK9407B)
+
+**Neven-PC: ON ne radi ni nakon uklanjanja starog bloka EON.** Pitanje za razvojno računalo, s izvornim kodom:
+- Na Neven-PC vrijedi: prečac „ETAZIRANJE RAZVOJ” → DGN → `ETAZ ON PANEL` javlja „Unknown key-in or command”,
+  a `mdl load Etaziranje.Bentley` javlja „ETAZIRANJE_ON is already loaded”.
+- `ETAZIRANJE_RAZVOJ.cfg` sadrži `%include C:/AITools/EtaziranjeON/config/Etaziranje.ON.cfg` (MS_DGNAPPS > Etaziranje.Bentley).
+- `Personal.ucf` sada ima samo 4 osnovna retka i blok ThreeDtoBen T01. Blok EON je uklonjen.
+- `Process.Modules` od MapUltimate.exe ne pokazuje nijedan modul `Etaziranje*`, `EonInit*` ni `ThreeDtoBen*`
+  (moguće je da upravljane assemblyje ne prikazuje).
+
+Molim provjeri:
+1. Radi li `ETAZ ON PANEL` na razvojnom računalu s istim runtimeom kao u v1.0-inst2?
+2. Što bi pri „already loaded” spriječilo registraciju KeyinTree? Postoji li ugrađen `CommandTable.xml` u buildu iz
+   paketa? Ima li još neka komponenta MdlTaskID `ETAZIRANJE_ON` ili korijensku riječ `ETAZ` (npr. 3DtoBen, Bridge)?
+3. Koje je najmanje što Božidar može pokrenuti u Bentleyju na Neven-PC da se ovo dokaže
+   (npr. `expand set MS_DGNAPPS`, `expand set MS_ADDINPATH`, MDL dialog, Message Center)?
+
 ## 2026-11-04 13:45, od cloud → svi
 
 Pitanje o ulogama iz poruke u 13:30 je **zatvoreno**: instalacija na Neven-PC je završila, a prijava E i `SELECT 1` su
