@@ -1,5 +1,27 @@
 # Status (najnovije na vrhu)
 
+## 2026-11-04 14:10, cloud (prema ispisima s Neven-PC) — ETAZ ON PANEL: Unknown key-in, uklonjen stari blok EON
+
+**Utvrđeno**
+- U Bentleyju (prečac „ETAZIRANJE RAZVOJ”, otvoren DGN) `ETAZ ON PANEL` javlja „Unknown key-in”, a
+  `mdl load Etaziranje.Bentley` javlja „ETAZIRANJE_ON is already loaded”.
+- Zaključak (vjerojatan, nije potvrđen popisom modula): stari blok `EON INIT MANAGED` u `Personal.ucf`
+  (`EON_INIT_ROOT = C:/AITools/EtažiranjeBentleyBlokovi/`, `%include .../integration/eon/eon.cfg`, `MS_DGNAPPS > EonInit.dll`)
+  učitava staru komponentu pod istim MdlTaskID `ETAZIRANJE_ON` (vidi `Etaziranje.Bentley/AddInMain.cs`). Novi
+  `Etaziranje.Bentley.dll` iz `C:\AITools\EtaziranjeON\runtime\current` zato se ne učita, pa njegova KeyinTree ne postoji.
+
+**Promijenjeno** (uz Božidarovo odobrenje)
+- Iz `%LOCALAPPDATA%\Bentley\MapUltimate\25.0.0\prefs\Personal.ucf` uklonjen je **samo** blok
+  `# BEGIN/END EON INIT MANAGED`. Kopija prije promjene: `Personal.ucf.prije-uklanjanja-EON-<datum-vrijeme>`, u istoj mapi.
+- Blok `ThreeDtoBen T01 autoload` je ostao.
+
+**Otvoreno**
+- Proba: „ETAZIRANJE RAZVOJ” → DGN → `ETAZ ON PANEL`.
+- **Za installer (razvojno računalo):** inventura i UCF higijena (odjeljak 3, točka 4 predaje) moraju otkriti blok
+  `EON INIT MANAGED`, odnosno bilo koju drugu komponentu s MdlTaskID `ETAZIRANJE_ON`, i uz kopiju je ukloniti.
+  Bez toga je instalacija na računalu sa starim EON-om „uspješna”, a ON ne radi. Završna provjera mora uključivati
+  stvarno učitavanje novog `Etaziranje.Bentley.dll`.
+
 ## 2026-11-04 13:45, cloud (prema ispisima s Neven-PC) — Etažiranje v1.0-inst2 instaliran
 
 **Utvrđeno**
