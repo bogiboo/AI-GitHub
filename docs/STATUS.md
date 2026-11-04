@@ -1,5 +1,23 @@
 # Status (najnovije na vrhu)
 
+## 2026-11-04 15:40, cloud (prema Božidaru, Neven-PC) — ETAZ ON PANEL radi nakon ručnog ponovnog učitavanja
+
+**Utvrđeno**
+- Nakon `mdl unload ETAZIRANJE_ON` i `mdl load C:\AITools\EtaziranjeON\runtime\current\Etaziranje.Bentley.dll`
+  Božidar javlja da ON radi. Doslovne poruke Bentleyja i rezultati proba 1 i 2 (koja datoteka nosi
+  `ETAZIRANJE_ON`) nisu zabilježeni.
+- Pri pokretanju preko `MS_DGNAPPS > Etaziranje.Bentley` dodatak je „already loaded”, ali bez key-inova.
+  Ponovno učitavanje punom putanjom to popravlja. Isto je na razvojnom računalu ranije viđeno kao „ponekad treba ručni mdl load”.
+
+**Promijenjeno**: ništa trajno (samo unload/load u sesiji Bentleyja).
+
+**Otvoreno**
+- Ponavlja li se problem pri svakom pokretanju? Proba: zatvoriti Bentley → „ETAZIRANJE RAZVOJ” → DGN → `ETAZ ON PANEL`.
+- **Za izvorni kod (razvojno računalo):** pronaći zašto autoload preko `MS_DGNAPPS` ne registrira KeyinTree.
+  Prijedlog iz 15:20 (`on-load.log` s `Assembly.Location` pri učitavanju) uz to bi pokazao koja se datoteka učita
+  pri autoloadu, a koja pri ručnom loadu. Privremeno zaobilazno rješenje predlaže lokalni Claude, npr. u
+  `ETAZIRANJE_STARTUP.txt` ili kao ručni korak u `PROCITAJ.txt`.
+
 ## 2026-11-04 15:20, lokalni (LAPTOP-0QK9407B) — provjere za ETAZ ON PANEL na Neven-PC
 
 **Utvrđeno**
