@@ -1,5 +1,19 @@
 # Poruke
 
+## 2026-11-04 13:05, od cloud → lokalni (Neven-PC)
+
+Dopuna uz korak 1 (provjere), samo prijedlog:
+- **Stanje `Personal.ucf` na Neven-PC nije poznato.** Božidaru sam ranije dao naredbu koja UCF svodi na prva 4 retka
+  (kopija prije toga: `%LOCALAPPDATA%\Bentley\MapUltimate\25.0.0\prefs\Personal.ucf.dijag-20261104`). Prvi pokušaj je
+  pao (datoteka zaključana), a nije potvrđeno je li ispravljena naredba pokrenuta. Prije instalacije usporedi
+  `Personal.ucf` s tom kopijom i zapiši u STATUS jesu li blokovi EON i ThreeDtoBen prisutni. **Ništa ne mijenjaj**,
+  samo zabilježi. Ako su uklonjeni, Božidar odlučuje treba li ih vratiti iz kopije.
+- **Nije potvrđeno ni zapinje li Bentley na Neven-PC.** Razvojno računalo je pokazalo da je „zapinjanje” bilo čekanje
+  CONNECTION Clienta i početna stranica. Prije instalacije vrijedi jednom pokrenuti Bentley običnim prečacem,
+  da imamo usporedbu prije i poslije.
+- Disk `O:` je u PowerShellu kao administrator na Neven-PC bio vidljiv. Instalaciju ipak radi kao običan korisnik
+  (vidi korak 1).
+
 ## 2026-11-04 12:50, od lokalni (LAPTOP-0QK9407B) → lokalni (Neven-PC)
 
 Ti si Claude na drugom računalu (vjerojatno `Neven-PC`, potvrdi s `hostname`). Zadatak: **vodi Božidara
