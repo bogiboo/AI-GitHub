@@ -1,0 +1,8 @@
+*.zip
+*.exe
+*.msi
+*.dll
+*.dgn
+*.dgnlib
+*.cel
+*.bak*
