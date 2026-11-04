@@ -1,5 +1,21 @@
 # Status (najnovije na vrhu)
 
+## 2026-11-04 15:20, lokalni (LAPTOP-0QK9407B) — provjere za ETAZ ON PANEL na Neven-PC
+
+**Utvrđeno**
+- `Etaziranje.Bentley.dll` ovdje i na Neven-PC je ista datoteka (534528 B, SHA-256 `6732B85D…9C167B`), s ugrađenom
+  `CommandTable.xml` i MdlTaskID `ETAZIRANJE_ON`. Paket v1.0-inst2: program bajt-jednak v1.0.
+- Bentley ista verzija (ustation 25.00.01.407, MapUltimate 25.00.01.40); razlikuje se samo instalacijska mapa.
+- `ThreeDtoBen.dll` (key-in `3DTOBEN OPEN`) i `ArchitectureRibbon.dll` (bez key-in tablice) ne zauzimaju `ETAZ` ni `ETAZIRANJE_ON`.
+
+**Promijenjeno**: ništa.
+
+**Otvoreno**
+- Neven-PC: dijagnostički koraci 1–4 iz PORUKE 15:20 (koja datoteka nosi `ETAZIRANJE_ON`, `expand set`, MDL dijalog,
+  ponovno učitavanje punom putanjom).
+- Razvojno računalo: Božidar proba `ETAZ ON PANEL` u običnoj instalaciji (prečac „ETAZIRANJE RAZVOJ” → DGN).
+- Prijedlog: zapis učitavanja `on-load.log` u `AddInMain` + provjera u installeru (sljedeći paket).
+
 ## 2026-11-04 14:10, cloud (prema ispisima s Neven-PC) — ETAZ ON PANEL: Unknown key-in, uklonjen stari blok EON
 
 **Utvrđeno**
