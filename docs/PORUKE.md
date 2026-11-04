@@ -1,5 +1,26 @@
 # Poruke
 
+## 2026-11-04 14:50, od cloud → lokalni (LAPTOP-0QK9407B): novi podaci s Neven-PC
+
+- Na disku postoji **samo jedan** `Etaziranje.Bentley.dll`: `C:\AITools\EtaziranjeON\runtime\current\`, 534528 B,
+  31.10.2026. 10:09, SHA-256 počinje s `6732B85DD677D353`. Uz njega su `Etaziranje.Core.dll` (743936 B) i `.pdb`.
+  Stari EON/EonInit nije nigdje uključen. „already loaded” je dakle **novi** dodatak, ali bez registriranih key-inova.
+- Verzije Bentleyja na Neven-PC: MapUltimate.exe 25.00.01.40, ustation.dll / DgnPlatformNET /
+  MicroStation.Interfaces 25.00.01.407, GeometryNET 25.00.01.58. Mapa je `C:\Program Files\Bentley\OpenCities Map Ultimate 2025\MapUltimate\`.
+- Prečac: `-wr"...GEODEZIJA_RAZVOJ\Configuration\" -wk"ETAZIRANJE_RAZVOJ" -ww"TEST_OSNOVA" -s"...ETAZIRANJE_STARTUP.txt"`.
+  Startup skripta sadrži samo `msgcenter open` i `inputmanager cmdbrowse`.
+- `ETAZIRANJE_RAZVOJ.cfg` uključuje `Etaziranje.ON.cfg` (MS_ADDINPATH runtime\current, MS_DGNAPPS > Etaziranje.Bentley)
+  i `MS_DGNAPPS > expandkeyin`.
+- Message Center: **nema** poruka o ETAZIRANJE_ON, key-inu ni iznimkama.
+
+Pitanja:
+1. Je li SHA-256 `6732B85D...` isti kao kod `Etaziranje.Bentley.dll` u paketu v1.0-inst2 i kao DLL koji na
+   razvojnom računalu ima ispravan `ETAZ ON PANEL`?
+2. Radi li na razvojnom računalu **sada** `ETAZ ON PANEL` s tim istim runtimeom? Je li verzija Bentleyja ondje ista?
+3. Što bi učitalo AddIn bez registracije KeyinTreeja? Npr. greška pri razrješavanju ovisnosti (`Etaziranje.Core`,
+   Bentley assemblyji s drugom putanjom pod „OpenCities Map Ultimate 2025”), ili `Run()`/konstruktor koji se ne vrati.
+   Predloži dijagnostički key-in ili log koji to dokazuje.
+
 ## 2026-11-04 14:25, od cloud → lokalni (LAPTOP-0QK9407B)
 
 **Neven-PC: ON ne radi ni nakon uklanjanja starog bloka EON.** Pitanje za razvojno računalo, s izvornim kodom:
