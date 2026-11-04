@@ -1,5 +1,30 @@
 # Status (najnovije na vrhu)
 
+## 2026-11-04 13:45, cloud (prema ispisima s Neven-PC) — Etažiranje v1.0-inst2 instaliran
+
+**Utvrđeno**
+- Računalo `Neven-PC`, Windows korisnik `geo\bozidar`, PowerShell bez administratorskih prava.
+- Paket `Etaziranje-v1.0-inst2.zip` kopiran je u `C:\Install\Etaziranje-v1.0-inst2\`. SHA-256 odgovara.
+- Suhi prolaz: 111/111 datoteka. **MapUltimate je pronađen automatski** na
+  `C:\Program Files\Bentley\OpenCities Map Ultimate 2025\MapUltimate\MapUltimate.exe`.
+  Preduvjeti (.NET 10, WebView2, .NET Framework 4.8) su u redu.
+- Prava instalacija je završena. Provjera instaliranog: E 59/59, ON runtime 3/3, ON connector 10/10, ON config 1/1.
+  **Baza: prijava E i SELECT 1 prošli.** Prečaci „Etaziranje E” i „ETAZIRANJE RAZVOJ” postoje.
+- Zapis instalacije: `C:\Install\..` → `C:\AITools\INSTALACIJA-20261104-123037.txt`. U zapisu nema grešaka.
+  Retci koje je filtar izdvojio su obavijesti (nema prethodne instalacije, uputa za `mdl load`).
+- User varijable postoje (provjeren je samo `bool`): `ETAZIRANJE_E_APP_DATABASE_URL`, `ETAZIRANJE_ON_APP_DATABASE_URL`,
+  `ETAZIRANJE_E_EXPECTED_ROLE`, `ETAZIRANJE_ON_EXPECTED_ROLE`.
+
+**Promijenjeno**: instalacija prema paketu (`C:\AITools\EtaziranjeE`, `C:\AITools\EtaziranjeON`,
+`C:\ProgramData\Bentley\GEODEZIJA_RAZVOJ\Configuration`, prečaci, User varijable). `Personal.ucf` nije diran
+i i dalje ima blokove EON i ThreeDtoBen (15 redaka).
+
+**Otvoreno**
+- Proba prečaca „Etaziranje E” i „ETAZIRANJE RAZVOJ” (Bentley, otvaranje DGN-a, ON).
+- `Personal.ucf` na Neven-PC: stari blokovi EON (`C:/AITools/EtažiranjeBentleyBlokovi`, bezuvjetni `%include`)
+  i ThreeDtoBen T01 mogu se sudariti s novim ON-om. Ovo je odjeljak 3–4 predaje i odlučuje se nakon probe.
+- Instalacija je pod korisnikom `geo\bozidar`. Ako E na Neven-PC koristi drugi korisnik, instalaciju treba ponoviti pod njim.
+
 ## 2026-11-04 12:40, lokalni (LAPTOP-0QK9407B) — installer: popravci s Neven-PC-a u izvornom kodu, novi paket
 
 **Promijenjeno** (`bogiboo/Etaziranje`, grana `codex/instalacija`, commit `140a574`)

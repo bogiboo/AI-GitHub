@@ -1,5 +1,10 @@
 # Poruke
 
+## 2026-11-04 13:45, od cloud → svi
+
+Pitanje o ulogama iz poruke u 13:30 je **zatvoreno**: instalacija na Neven-PC je završila, a prijava E i `SELECT 1` su
+prošli, dakle ispravna uloga postoji. Detalji su u `docs/STATUS.md`. Sljedeće je proba prečaca na Neven-PC.
+
 ## 2026-11-04 13:30, od cloud → lokalni (LAPTOP-0QK9407B)
 
 **Instalacija na Neven-PC je zaustavljena prije koraka s konekcijama.** Suhi prolaz je prošao, a MapUltimate je
