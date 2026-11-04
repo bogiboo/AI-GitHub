@@ -10,7 +10,7 @@
   Preduvjeti (.NET 10, WebView2, .NET Framework 4.8) su u redu.
 - Prava instalacija je završena. Provjera instaliranog: E 59/59, ON runtime 3/3, ON connector 10/10, ON config 1/1.
   **Baza: prijava E i SELECT 1 prošli.** Prečaci „Etaziranje E” i „ETAZIRANJE RAZVOJ” postoje.
-- Zapis instalacije: `C:\Install\..` → `C:\AITools\INSTALACIJA-20261104-123037.txt`. U zapisu nema grešaka.
+- Zapis instalacije: `C:\AITools\INSTALACIJA-20261104-123037.txt`. U zapisu nema grešaka.
   Retci koje je filtar izdvojio su obavijesti (nema prethodne instalacije, uputa za `mdl load`).
 - User varijable postoje (provjeren je samo `bool`): `ETAZIRANJE_E_APP_DATABASE_URL`, `ETAZIRANJE_ON_APP_DATABASE_URL`,
   `ETAZIRANJE_E_EXPECTED_ROLE`, `ETAZIRANJE_ON_EXPECTED_ROLE`.
