@@ -1,5 +1,24 @@
 # Status (najnovije na vrhu)
 
+## 2026-11-04 12:40, lokalni (LAPTOP-0QK9407B) — installer: popravci s Neven-PC-a u izvornom kodu, novi paket
+
+**Promijenjeno** (`bogiboo/Etaziranje`, grana `codex/instalacija`, commit `140a574`)
+- Mapa paketa kad je `$PSScriptRoot` u `param()` prazan (mrežni disk): popravak s Neven-PC-a, doslovno.
+- .NET provjera: `Get-DotnetRuntimes` — puna putanja `dotnet.exe`, stderr ne ruši provjeru; rezerva su mape
+  `%ProgramFiles%\dotnet\shared\...` s `.deps.json`. Test je pritom našao stvarnu grešku (StrictMode pad
+  kad `dotnet.exe` nije u PATH-u), popravljena.
+- `Find-MapUltimate`: `HKLM\SOFTWARE\Bentley\MapUltimate\*\ApplicationPath`, Uninstall `InstallLocation`,
+  prečaci u izborniku Start, zadana putanja. `-MapUltimateExe` i dalje ima prednost. Nađena putanja se ispisuje.
+- Testovi installera: 14/14 (novi IN12 bez -Paket, IN13 .NET rezerva, IN14 MapUltimate).
+
+**Novi paket**: `O:\BPosao\AI Installations\Etaziranje-v1.0-inst2.zip` (6795715 B, SHA-256 `f3a7fbb7…4f44b`).
+Program i Bentley dio bajt-jednaki `Etaziranje-v1.0.zip`; razlikuju se samo `scripts/Instaliraj.ps1` i `PROCITAJ.txt`.
+
+**Otvoreno**
+- Proba na Neven-PC: suhi prolaz pa prava instalacija (pod Windows korisnikom koji će koristiti E).
+- Ako MapUltimate na Neven-PC ni sada nije nađen: zapisati što je u `HKLM\SOFTWARE\Bentley\MapUltimate`.
+- Odjeljci 3–4 predaje (cijeli WorkSpace, UCF higijena, inventura): opseg nakon probe na Neven-PC.
+
 ## 2026-11-04 12:00, lokalni (LAPTOP-0QK9407B) — odjeljak 1 predaje: zatvoren bez popravka
 
 **Utvrđeno**
